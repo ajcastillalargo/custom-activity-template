@@ -1,25 +1,13 @@
 {
-  "name": "smsTemplate",
+  "name": "Notificacion PUSH 1 cliente",
   "version": "1.0.1",
-  "description": "Send SMS Journey Builder",
+  "description": "",
   "engines": {
     "node": "^12.12.16"
   },
   "scripts": {
     "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "keywords": [
-    "journey",
-    "builder",
-    "salesforce marketing cloud",
-    "heroku"
-  ],
-  "author": "TheonThai",
-  "homepage": "",
   "dependencies": {
     "axios": "^0.21.2",
     "base64url": "^3.0.1",

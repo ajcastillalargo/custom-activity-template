@@ -1,66 +1,80 @@
 {
+    "name": "Notificacion PUSH 1 cliente",
     "workflowApiVersion": "1.1",
     "metaData":
     {
         "icon": "images/icon.png",
-        "iconSmall": "images/iconSmall.png",
-        "category": "custom"
+        "iconSmall": "images/iconSmall.png"
     },
-
     "type": "REST",
     "lang":
     {
         "en-US":
         {
-            "name": "Custom Activity Test",
-            "description": "Test to deploy a custom activity in Heroku",
-            "step1Label": "Configure Activity"
+            "name": "REST Activity (Workflow API v1.1) for client PUSH notification",
+            "description": "A REST activity using workflow API v1.1 format for client PUSH notification.",
         }
     },
-    "arguments":
-    {
-        "execute":
-        {
-            "inArguments": [
-              { 
-                "SAMPLE_PARAM": "SAMPLE PARAM DATA FROM CONFIG.JSON"
-              }
-            ],
-            "outArguments": [],
-            "url": "https://first-test-custom-activity.herokuapp.com//journeybuilder/execute",
-            "verb": "POST",
-            "body": "",
-            "header": "",
-            "format": "json",
-            "useJwt": true,
-            "timeout": 10000
+    "arguments": {
+        "execute": {
+            "url": "https://wsacpt.helvetia.es/h_rest/b2c/notificaciones/v1",
+            "auth": {
+                "type": "basic",
+                "basic": [
+                    {
+                        "key": "username",
+                        "value": "WSSalesforce",
+                        "type": "string"
+                    },
+                    {
+                        "key": "password",
+                        "value": "D8emG.f.C4eDj8",
+                        "type": "string"
+                    },
+                    {
+                        "key": "showPassword",
+                        "value": false,
+                        "type": "boolean"
+                    }
+                ]
+            },
+            "body": {
+                "mode": "raw",
+                "raw": "{\r\n    \"enviarTodos\": false,\r\n    \"nifCliente\": \"72824084N\",\r\n    \"titulo\": \"Titulo Notificacion\",\r\n    \"texto\": \"Texto Notificacion\",\r\n    \"UrlPrimaria\": \"https://www.helvetia.es\",\r\n    \"textoUrlPrimaria\": \"Pulse para acceder a la web\",\r\n    \"urlSecundaria\": \"https://tueres.helvetia.es\",\r\n    \"textoUrlSecundaria\": \"Pulse para descargar el archivo\",\r\n    \"urlImagen\": \"https://www.sport.es\",\r\n    \"critica\": false,\r\n    \"nueva\": true,\r\n    \"notificacionPush\": true,\r\n    \"fechaEnvio\": \"2022-03-01\",\r\n    \"fechaCaducidad\": \"2022-03-26\",\r\n    \"origen\": \"salesforce\"\r\n}",
+                "options": {
+                    "raw": {
+                        "language": "json"
+                    }
+                }
+            },
+            "method": "POST",
+            "useJwt": false,
+            "timeout": 3000
         }
     },
-    
     "configurationArguments":
     {
-        "applicationExtensionKey": "36291e6a-c514-4345-b119-973841320876",
         "save":
         {
-            "url": "https://first-test-custom-activity.herokuapp.com//journeybuilder/save",
+            "url": "https://wsacpt.helvetia.es/h_rest/b2c/notificaciones/v1",
             "verb": "POST",
             "useJwt": true
         },
         "publish":
         {
-            "url": "https://first-test-custom-activity.herokuapp.com//journeybuilder/publish",
+            "url": "https://wsacpt.helvetia.es/h_rest/b2c/notificaciones/v1",
             "verb": "POST",
             "useJwt": true
         },
         "stop":
         {
-            "url": "https://first-test-custom-activity.herokuapp.com//journeybuilder/stop",
+            "url": "https://wsacpt.helvetia.es/h_rest/b2c/notificaciones/v1",
             "verb": "POST",
             "useJwt": true
         },
         "validate":
         {
-            "url": "https://first-test-custom-activity.herokuapp.com//journeybuilder/validate",
+            "url": "https://wsacpt.helvetia.es/h_rest/b2c/notificaciones/v1",
             "verb": "POST",
             "useJwt": true
         }
