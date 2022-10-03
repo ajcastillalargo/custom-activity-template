@@ -6,9 +6,10 @@ const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
 let axios = require("axios");
+const configVars = require('../package.json');
 
 // Global Variables
-const tokenURL = `${process.env.authenticationUrl}/v2/token`;
+const tokenURL = `${configVars.options.salesforce.marketingCloud.authenticationUrl}/v2/token`;
 
 
 exports.logExecuteData = [];
@@ -75,7 +76,7 @@ exports.save = function (req, res) {
  * POST Handler for /execute/ route of Activity.
  */
 exports.execute = function (req, res) {
-    JWT(req.body, process.env.jwtSecret, (err, decoded) => {
+    JWT(req.body, configVars.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
         // verification error -> unauthorized request
         if (err) {
             console.error(err);
@@ -136,8 +137,8 @@ exports.stop = function (req, res) {
 function retrieveToken () {
     axios.post(tokenURL, { // Retrieving of token
         grant_type: 'client_credentials',
-        client_id: process.env.clientId,
-        client_secret: process.env.clientSecret
+        client_id: configVars.options.salesforce.marketingCloud.clientId,
+        client_secret: configVars.options.salesforce.marketingCloud.clientSecret
     })
     .then(function (response) {
         return response.data['access_token'];

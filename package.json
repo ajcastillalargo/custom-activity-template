@@ -40,5 +40,15 @@
     "sfmc-fuelsdk-node": "^2.4.0",
     "superagent": "^5.1.2",
     "uglify-js": "^3.7.2"
+  },
+  "options": {
+    "salesforce": {
+        "marketingCloud": {
+          "jwtSecret": "JfzzM2h3FKWeuboV2Sg8NkitTrWAvGrlJyR9aPo7RSSPER-A0HVboJYH-erK_f7e30iaGchJd63eA4C0z29-L2p9GGZ24tgbQ5XqdWQ9OPJZEbzbBPpcj_JEkwBReUSoSXfLhEfTTfrnUO71ikDt0FoObxGZwe5zzYHT6NPts9FiMwWAUAtFRArVUZ1TVnFLvposCXmSB9N4LuV9SC_gdYSXg07ivTji5cV2Fd_ktr1e-_hdXtQvabZAOWWoCw2",
+          "clientId": "eg11p1j9xsgku30ojd5p034t",
+          "clientSecret": "QL4hyTeFvI1dBt6Ri6sjKOS7",
+          "authenticationUrl": "https://mccbg961xjjmf7sms5sbwc0v9tj8.auth.marketingcloudapis.com/"
+        }
+    }
   }
 }
