@@ -10,10 +10,6 @@ define(['postmonger'], function (Postmonger) {
     let lastnameSchema = ''; // variable is used in parseEventSchema()
     let eventDefinitionKey;
 
-    //$(window).ready(onRender);
-    connection.on('initActivity', initialize);
-    connection.on('clickedNext', save); //Save function within MC
-
     //function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
     connection.trigger('ready');
@@ -33,20 +29,20 @@ define(['postmonger'], function (Postmonger) {
         }
     });
 
-    function initialize(data) {
+    connection.on('initActivity', function initialize(data) {
         document.getElementById('configuration').value = JSON.stringify(data, null, 2);
         if (data) {
             payload = data;
         }
         initialLoad(data);
         parseEventSchema();
-    }
+    });
 
     /**
      * Save function is fired off upon clicking of "Done" in Marketing Cloud
      * The config.json will be updated here if there are any updates to be done via Front End UI
      */
-    function save() {
+     connection.on('clickedNext', function save() {
         //var configuration = JSON.parse(document.getElementById('configuration').value);
         //connection.trigger('updateActivity', configuration);
 
@@ -57,7 +53,7 @@ define(['postmonger'], function (Postmonger) {
         ];
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
-    }
+    });
 
     /**
      * 
