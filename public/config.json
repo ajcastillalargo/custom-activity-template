@@ -41,7 +41,7 @@
             },
             "body": {
                 "mode": "raw",
-                "raw": "{\r\n    \"enviarTodos\": false,\r\n    \"nifCliente\": \"72824084N\",\r\n    \"titulo\": \"Titulo Notificacion\",\r\n    \"texto\": \"Texto Notificacion\",\r\n    \"UrlPrimaria\": \"https://www.helvetia.es\",\r\n    \"textoUrlPrimaria\": \"Pulse para acceder a la web\",\r\n    \"urlSecundaria\": \"https://tueres.helvetia.es\",\r\n    \"textoUrlSecundaria\": \"Pulse para descargar el archivo\",\r\n    \"urlImagen\": \"https://www.sport.es\",\r\n    \"critica\": false,\r\n    \"nueva\": true,\r\n    \"notificacionPush\": true,\r\n    \"fechaEnvio\": \"2022-03-01\",\r\n    \"fechaCaducidad\": \"2022-03-26\",\r\n    \"origen\": \"salesforce\"\r\n}",
+                "raw": "{\r\n    \"enviarTodos\": false,\r\n    \"nifCliente\": \"{{Contact.Key}}\",\r\n    \"titulo\": \"Titulo Notificacion\",\r\n    \"texto\": \"Texto Notificacion\",\r\n    \"UrlPrimaria\": \"https://www.helvetia.es\",\r\n    \"textoUrlPrimaria\": \"Pulse para acceder a la web\",\r\n    \"urlSecundaria\": \"https://tueres.helvetia.es\",\r\n    \"textoUrlSecundaria\": \"Pulse para descargar el archivo\",\r\n    \"urlImagen\": \"https://www.sport.es\",\r\n    \"critica\": false,\r\n    \"nueva\": true,\r\n    \"notificacionPush\": true,\r\n    \"fechaEnvio\": \"2022-03-01\",\r\n    \"fechaCaducidad\": \"2022-03-26\",\r\n    \"origen\": \"salesforce\"\r\n}",
                 "options": {
                     "raw": {
                         "language": "json"
