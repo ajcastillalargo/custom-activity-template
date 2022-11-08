@@ -47,8 +47,8 @@ define(['postmonger'], function (Postmonger) {
      * The config.json will be updated here if there are any updates to be done via Front End UI
      */
     function save() {
-        var configuration = JSON.parse(document.getElementById('configuration').value);
-        connection.trigger('updateActivity', configuration);
+        //var configuration = JSON.parse(document.getElementById('configuration').value);
+        //connection.trigger('updateActivity', configuration);
 
         payload['arguments'].execute.inArguments = [
             {
