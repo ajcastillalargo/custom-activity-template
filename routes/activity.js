@@ -11,7 +11,6 @@ const configVars = require('../package.json');
 // Global Variables
 const tokenURL = `${configVars.options.salesforce.marketingCloud.authenticationUrl}/v2/token`;
 
-
 exports.logExecuteData = [];
 function logData(req) {
     exports.logExecuteData.push({
