@@ -10,16 +10,16 @@ define(['postmonger'], function (Postmonger) {
     let lastnameSchema = ''; // variable is used in parseEventSchema()
     let eventDefinitionKey;
 
-    $(window).ready(onRender);
+    //$(window).ready(onRender);
     connection.on('initActivity', initialize);
     connection.on('clickedNext', save); //Save function within MC
 
-    function onRender() {
+    //function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
-        connection.trigger('ready');
-        connection.trigger('requestTokens');
-        connection.trigger('requestEndpoints');
-    }
+    connection.trigger('ready');
+    connection.trigger('requestTokens');
+    connection.trigger('requestEndpoints');
+    //}
 
     /**
      * This function is to pull out the event definition within journey builder.
@@ -34,11 +34,12 @@ define(['postmonger'], function (Postmonger) {
     });
 
     function initialize(data) {
-        if (data) {
+        document.getElementById('configuration').value = JSON.stringify(data, null, 2);
+        /*if (data) {
             payload = data;
         }
         initialLoad(data);
-        parseEventSchema();
+        parseEventSchema();*/
     }
 
     /**
@@ -46,6 +47,9 @@ define(['postmonger'], function (Postmonger) {
      * The config.json will be updated here if there are any updates to be done via Front End UI
      */
     function save() {
+        var configuration = JSON.parse(document.getElementById('configuration').value);
+        /*connection.trigger('updateActivity', configuration);
+
         payload['arguments'].execute.inArguments = [
             {
                 SAMPLE_PARAM: "SAMPLE PARAM DATA FROM CONFIG.JSON"
@@ -53,6 +57,7 @@ define(['postmonger'], function (Postmonger) {
         ];
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
+        */
     }
 
     /**
