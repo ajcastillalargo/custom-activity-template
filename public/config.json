@@ -4,7 +4,8 @@
     "metaData":
     {
         "icon": "images/icon.png",
-        "iconSmall": "images/iconSmall.png"
+        "iconSmall": "images/iconSmall.png",
+        "category": "message"
     },
     "type": "REST",
     "lang":
