@@ -50,14 +50,13 @@ define(['postmonger'], function (Postmonger) {
         var configuration = JSON.parse(document.getElementById('configuration').value);
         connection.trigger('updateActivity', configuration);
 
-        /*payload['arguments'].execute.inArguments = [
+        payload['arguments'].execute.inArguments = [
             {
                 SAMPLE_PARAM: "SAMPLE PARAM DATA FROM CONFIG.JSON"
             }
         ];
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
-        */
     }
 
     /**
