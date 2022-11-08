@@ -35,11 +35,11 @@ define(['postmonger'], function (Postmonger) {
 
     function initialize(data) {
         document.getElementById('configuration').value = JSON.stringify(data, null, 2);
-        /*if (data) {
+        if (data) {
             payload = data;
         }
         initialLoad(data);
-        parseEventSchema();*/
+        parseEventSchema();
     }
 
     /**
@@ -48,9 +48,9 @@ define(['postmonger'], function (Postmonger) {
      */
     function save() {
         var configuration = JSON.parse(document.getElementById('configuration').value);
-        /*connection.trigger('updateActivity', configuration);
+        connection.trigger('updateActivity', configuration);
 
-        payload['arguments'].execute.inArguments = [
+        /*payload['arguments'].execute.inArguments = [
             {
                 SAMPLE_PARAM: "SAMPLE PARAM DATA FROM CONFIG.JSON"
             }
