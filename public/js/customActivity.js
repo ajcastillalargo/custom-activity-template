@@ -48,9 +48,19 @@ define(['postmonger'], function (Postmonger) {
 
         payload['arguments'].execute.inArguments = [
             {
-                SAMPLE_PARAM: "SAMPLE PARAM DATA FROM CONFIG.JSON"
+                enviarTodos: true,
+                nifCliente: "{{Contact.Key}}",
+                titulo: "Titulo",
+                texto: "texto notificación",
+                critica: false,
+                nueva: true,
+                notificacionPush: true,
+                fechaEnvio: "2022-11-11",
+                fechaCaducidad: "2022-11-18",
+                origne: "Salesforce"
             }
         ];
+        payload['metaData'].headers = "";
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
     });
