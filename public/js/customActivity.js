@@ -57,10 +57,17 @@ define(['postmonger'], function (Postmonger) {
                 notificacionPush: true,
                 fechaEnvio: "2022-11-11",
                 fechaCaducidad: "2022-11-18",
-                origne: "Salesforce"
+                origen: "Salesforce"
             }
         ];
-        payload['metaData'].headers = "";
+        payload['arguments'].execute.auth = [{
+            type: "basic",
+            basic:[{
+                username: "WSSalesforce",
+                password: "D8emG.f.C4eDj8",
+                showPassword: false
+            }]
+        }];
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
     });
