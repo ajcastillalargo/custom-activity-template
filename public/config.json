@@ -38,7 +38,7 @@
                     }
                 ]
             },
-            "headers":"",
+            "header":"",
             "inArguments": [
               {
                 "enviarTodos": "true"

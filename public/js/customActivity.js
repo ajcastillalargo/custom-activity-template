@@ -68,6 +68,7 @@ define(['postmonger'], function (Postmonger) {
                 showPassword: false
             }]
         }];
+        payload['arguments'].execute.header = "";
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
     });
