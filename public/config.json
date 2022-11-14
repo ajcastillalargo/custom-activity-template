@@ -38,7 +38,9 @@
                     }
                 ]
             },
-            "header":"",
+            "header":{
+              "Content-Type": "application/json"
+            },
             "inArguments": [
               {
                 "enviarTodos": "true"
