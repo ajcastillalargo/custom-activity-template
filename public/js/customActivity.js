@@ -68,7 +68,9 @@ define(['postmonger'], function (Postmonger) {
                 showPassword: false
             }]
         }];
-        payload['arguments'].execute.header = "";
+        payload['arguments'].execute.header = {
+            "Content-Type": "application/json"
+          };
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
     });
